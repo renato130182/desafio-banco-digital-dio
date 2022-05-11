@@ -1,12 +1,16 @@
 package model;
 
 import interfaces.InterfaceContas;
+import lombok.Getter;
 
 public abstract class Conta implements InterfaceContas {
     private static final  int AGENCIA_PADRAO=1;
     private static int SEQUENCIAL = 1;
+    @Getter
     protected int agencia;
+    @Getter
     protected int numero;
+    @Getter
     protected double saldo;
     private final Cliente cliente;
 
@@ -15,18 +19,6 @@ public abstract class Conta implements InterfaceContas {
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
     }
 
     @Override
